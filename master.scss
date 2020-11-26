@@ -1,0 +1,49 @@
+@import "./_variables";
+@import "./_.functions";
+
+
+header{
+
+@include header_attributes($theme_color, $text_color, $main_font_size)
+
+}
+    .headerPicture{
+    @include parallax_function($header_Picture)
+
+    }
+
+    .secondPicture{
+        @include parallax_function($second_picture)
+    }
+
+    .text1{
+        @include text_attributes($theme_color, $text_color)
+    }
+
+    .text2{
+        @extend .text1;
+    }
+
+    .text3{
+        @extend .text1;
+    }
+
+    h1{
+        @include h1_attributes()
+    }
+
+    .thirdPicture{
+        @include parallax_function($third_picture)
+    }
+
+    .navBar li{
+        @include navigation_bar($theme_color, $text_color)
+    }
+
+    .navBar a{
+        @include navigation_bar($theme_color, $text_color)
+    }
+
+    .navBar a:hover{
+        @include navigation_bar_hover_attribute($text_color, $theme_color)
+    }
