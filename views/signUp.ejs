@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <h1>Wanna subsribe to our newsletter? leave your email and a message below</h1>
+    <form action="/message" method="post">
+    <input type="email" name="email" placeholder="example@email.com">
+    <input type="password" name="password" placeholder="password">
+    <button type="submit">sumbit</button>
+    </form>
+<ol>
+    <% for(let i = 0; i < message.length; i++) { %> D
+        <li> 
+           <p>message[i]</p> 
+        </li>
+
+    <% } %>
+
+</ol>
+</body>
+</html>
