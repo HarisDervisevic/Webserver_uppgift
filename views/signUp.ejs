@@ -9,19 +9,10 @@
 </head>
 <body>
     <h1>Wanna subsribe to our newsletter? leave your email and a message below</h1>
-    <form action="/message" method="post">
+    <form action="/signUp" method="post">
     <input type="email" name="email" placeholder="example@email.com">
-    <input type="password" name="password" placeholder="password">
+    <input type="message" name="message" placeholder="message">
     <button type="submit">sumbit</button>
     </form>
-<ol>
-    <% for(let i = 0; i < message.length; i++) { %> D
-        <li> 
-           <p>message[i]</p> 
-        </li>
-
-    <% } %>
-
-</ol>
 </body>
 </html>

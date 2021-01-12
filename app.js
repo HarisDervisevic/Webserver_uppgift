@@ -1,6 +1,6 @@
 const express = require('express')
 const dbmodule = require('./dbmodule')
-const personModel = require('./PersonModel')
+const MessageModel = require('./MessageModel')
 const app = express()
 const port = 3000
 
@@ -17,17 +17,16 @@ mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 
 app.get('/', (req, res) => res.sendFile(__dirname + "\\client\\homePage.html"))
 
-app.get('/signUp',function(req,res){
-  res.render('signUp.ejs', { });
+app.get('/signUp',async (req,res) => {
+  const allMessages = await MessageModel.getAllMessages()
+  res.render('signUp.ejs', { message : allMessages});
  });
 
-
-app.post('/', (req, res) => {
-  let person = personModel.createPerson({ name: req.body.name, email: req.body.email});
-  
-  dBModule.store(person)
-  person.save();
-  res.redirect();
+app.post('/signUp', async (req, res) => {
+  const message = await MessageModel.createMessage(req.body.email, req.body.message)
+  await dbModule.store(message)
+  var messages = await MessageModel.getAllMessages()
+  res.render('views/signUp.ejs', {message : messages})
 })
 
 const logger = function (req, res, next) {
