@@ -14,5 +14,20 @@
     <input type="message" name="message" placeholder="message">
     <button type="submit">sumbit</button>
     </form>
+    
+    <ol>
+        <% for(let i = 0; i < message.length; i++) { %> 
+            <li> 
+               <p>
+                 <%- message[i].email %> 
+                 <%- message[i].text %> 
+
+               </p> 
+            </li>
+    
+        <% } %>
+    
+    </ol>
+
 </body>
 </html>

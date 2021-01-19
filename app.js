@@ -24,9 +24,8 @@ app.get('/signUp',async (req,res) => {
 
 app.post('/signUp', async (req, res) => {
   const message = await MessageModel.createMessage(req.body.email, req.body.message)
-  await dbModule.store(message)
-  var messages = await MessageModel.getAllMessages()
-  res.render('views/signUp.ejs', {message : messages})
+  await dbmodule.store(message)
+  res.redirect('/signUp')
 })
 
 const logger = function (req, res, next) {

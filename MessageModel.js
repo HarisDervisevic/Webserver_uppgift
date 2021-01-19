@@ -5,10 +5,10 @@ const messageSchema = new mongoose.Schema({
     text: String
 });
 
-const message = mongoose.model('Message', messageSchema);
+const Message = mongoose.model('Message', messageSchema);
 
 exports.createMessage = (inMail, inText) => {
-    var message = new message({
+    var message = new Message({
       email: inMail,
       text: inText
     })
@@ -17,6 +17,6 @@ exports.createMessage = (inMail, inText) => {
 }
 
 exports.getAllMessages = async () => {
-  let message = await message.find({})
+  let message = await Message.find({})
   return message
 }
